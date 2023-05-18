@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Change Background Color</title>
+  <style>
+    body {
+      transition: background-color 0.5s;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="changeBackgroundColor()">Change Color</button>
+
+  <script>
+    var colors = ["#FF0000", "#00FF00", "#0000FF", "#FFFF00", "#FF00FF", "#00FFFF"]; // Array of colors
+
+    function changeBackgroundColor() {
+      var randomIndex = Math.floor(Math.random() * colors.length); // Generate a random index
+      var selectedColor = colors[randomIndex]; // Get a random color from the array
+
+      document.body.style.backgroundColor = selectedColor; // Set the background color of the body
+    }
+  </script>
+</body>
+</html>

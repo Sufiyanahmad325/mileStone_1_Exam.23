@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image Movement</title>
+  <style>
+    #image {
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+  <img id="image" src="/css/multipale assignment 2/doctor.png" alt="Moving Image">
+
+  <script>
+    var image = document.getElementById("image");
+    var posX = 0;
+    var posY = 0;
+    var step = 10; // Step size for each movement
+
+    // Event listener for keydown event
+    document.addEventListener("keydown", function(event) {
+      var keyPressed = event.keyCode;
+
+      switch (keyPressed) {
+        case 37: // Left arrow key
+          posX -= step;
+          break;
+        case 38: // Up arrow key
+          posY -= step;
+          break;
+        case 39: // Right arrow key
+          posX += step;
+          break;
+        case 40: // Down arrow key
+          posY += step;
+          break;
+      }
+
+      // Update the image position
+      image.style.left = posX + "px";
+      image.style.top = posY + "px";
+    });
+  </script>
+</body>
+</html>

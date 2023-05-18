@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add List Items</title>
+  <script>
+    // Pre-existing array of list items
+    var listItemArray = [
+      "Introduction",
+      "Module 1: HTML Basics",
+      "Module 2: CSS Styling",
+      "Module 3: JavaScript Fundamentals",
+      "Module 4: DOM Manipulation",
+      "Module 5: Advanced Topics"
+    ];
+
+    // Counter to keep track of the current item index
+    var currentItemIndex = 0;
+
+    function addListItem() {
+      var list = document.getElementById("list");
+      var message = document.getElementById("message");
+
+      // Check if there are remaining items in the list item array
+      if (currentItemIndex < listItemArray.length) {
+        var newItem = document.createElement("li");
+        newItem.textContent = listItemArray[currentItemIndex];
+        list.appendChild(newItem);
+        currentItemIndex++;
+      } else {
+        message.textContent = "All items have been added.";
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>What you'll learn:</h1>
+  <ul id="list"></ul>
+  <button onclick="addListItem()">Add List Item</button>
+  <p id="message"></p>
+</body>
+</html>
